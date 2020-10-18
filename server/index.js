@@ -10,16 +10,27 @@ app.use(morgan('tiny'));
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+app.use(express.static('./public'));
+/*
+app.get('/:id', (req, res) => {
+    //Redirect to URL
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Shorty,You nice little bitch'
+});
 
-    });
+app.get('/url/;id', (req, res) => {
+    //create a short url
 
-    const port = process.env.PORT || 1330;
-    app.listen(port, () => {
-        console.log('Listening at http://localhost/${port}');
-    })
 
+});
+
+app.post('/url/', (req, res) => {
+    //create a short url
+
+
+});
+*/
+
+port = process.env.PORT || 1337;
+app.listen(port, () => {
+    console.log('Listening at http://localhost:{port}');
 });
